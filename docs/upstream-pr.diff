@@ -1,0 +1,25 @@
+diff --git a/examples/google-chromecast-gtv-4k/debloat-keep-cast.txt b/examples/google-chromecast-gtv-4k/debloat-keep-cast.txt
+index 6cf9e2c..29c795b 100644
+--- a/examples/google-chromecast-gtv-4k/debloat-keep-cast.txt
++++ b/examples/google-chromecast-gtv-4k/debloat-keep-cast.txt
+@@ -25,6 +25,20 @@
+ # Move on to debloat.txt when you install the launcher and accept losing phone casting after a reboot.
+ #
+ # Lived with on 2026-10-22: stock home, phone casting (YouTube), Play Store and Assistant all worked.
++#
++# Third unit (France, build <BUILD_ID from tools/tv.py --probe>), applied from Windows with tools\disable.ps1 over
++# Wireless debugging (TV_ADB_BINARY). Status: lived with from 2026-11-07 to <DATE>, reboot-checked <YES/NO>.
++# - An older adb already on PATH (installed by another tool) answered "unknown command pair". Pairing needs
++#   platform-tools 30 or later; point TV_ADB_BINARY at that adb, not at whichever one PATH finds first.
++# - With the PC on Ethernet and the stick on Wi-Fi behind the same box, `adb mdns services` listed nothing.
++#   `adb pair` with the address under the pairing code, then `adb connect` with the address on the main
++#   Wireless debugging screen (a different port) worked.
++# - YouTube button with launcherx kept as Home: Key Mapper (-foss APK and the two adb commands in
++#   debloat.txt's quirks), trigger "Button 3" recorded with the real remote, action "Launch app" to
++#   TizenTube Cobalt (io.gh.reisxd.tizentube.cobalt), opened it from the Google TV home <and from inside another app: YES/NO>
++#   <and after a reboot: YES/NO>. Phone casting to the stock YouTube app <still worked: YES/NO>.
++# - Settings > Accounts & profiles > Apps only mode removes the recommendation rows but the home still shows a
++#   promoted background; only replacing Home (debloat.txt) removes it.
+ 
+ # Telemetry, feedback and ads
+ com.google.android.feedback
