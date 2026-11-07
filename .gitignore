@@ -1,3 +1,6 @@
+vendor/cleanyourtv/tools/venv/
+vendor/cleanyourtv/tools/adbkey*
+vendor/cleanyourtv/platform-tools/
+vendor/cleanyourtv/backup/
 backup/
-platform-tools/
 *.apk
