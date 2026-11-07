@@ -12,7 +12,7 @@ YouTube TV interface** on the remote's YouTube button.
 |---|---|
 | PC setup | Installs Python with winget if missing and downloads Google's current platform-tools (`adb`) into the project folder. CleanYourTV's files ship in [`vendor/cleanyourtv`](vendor/cleanyourtv/VENDORED.md), pinned to one commit: nothing else is fetched from it. |
 | Connect | Pairs over Wireless debugging: you type the address and the 6-digit code shown on the TV. |
-| Backup | Saves the package list, disabled packages, `getprop` and all settings to `backup\`. |
+| Backup | Saves the package list, disabled packages, `getprop` and all settings to `vendor\cleanyourtv\backup\`, on your PC only. |
 | Debloat | Runs the vendored CleanYourTV `tools\disable.ps1` with `examples/google-chromecast-gtv-4k/debloat-keep-cast.txt`: telemetry, ad services and preloads disabled with `pm disable-user`, nothing uninstalled. The Google TV home and phone casting are kept. |
 | YouTube | Installs the latest [TizenTube Cobalt](https://github.com/reisxd/TizenTubeCobalt) (YouTube TV interface, ad blocking, SponsorBlock) and [Key Mapper](https://github.com/keymapperorg/KeyMapper) from their official GitHub releases, and enables Key Mapper's accessibility service. |
 | Close | Turns Wireless debugging and USB debugging off on the stick. |
@@ -44,7 +44,8 @@ Messages follow the Windows display language (French or English).
 - Auto-discovery (`adb mdns`) may find nothing when the PC is on Ethernet and the stick on Wi-Fi; the script
   asks for the address instead.
 
-Not affiliated with CleanYourTV, Google, TizenTube or Key Mapper. MIT licence.
+Not affiliated with CleanYourTV, Google, TizenTube or Key Mapper. Provided as is, under the MIT licence: use it at
+your own risk. Issues and pull requests are welcome.
 
 ---
 
